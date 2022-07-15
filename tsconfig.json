@@ -1,6 +1,8 @@
 {
-  "extends": "expo/tsconfig.base",
+  "extends": "eslint-config-react-native-wcandillon/tsconfig.base",
   "compilerOptions": {
+    // "jsx": "preserve",
+    "jsx": "react-native",
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
