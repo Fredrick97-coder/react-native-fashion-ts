@@ -1,7 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { Onboarding } from './src/Authentication';
-import { LoadAssets } from './src/components/LoadAssets';
-import { NavigationContainer } from '@react-navigation/native';
+import { LoadAssets } from './src/components';
 
 const fonts = {
   'SFProText-Bold': require('./assets/fonts/SF-Pro-Text-Bold.otf'),
