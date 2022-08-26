@@ -9,6 +9,8 @@ import Animated, {
 } from 'react-native-reanimated';
 import Subslide from './Subslide';
 import Dot from './Dot';
+import { useNavigation } from '@react-navigation/native';
+import { MainStackScreenProp } from '../../../App';
 
 const BORDER_RADIUS = 75;
 const { width } = Dimensions.get('window');
@@ -75,6 +77,8 @@ const slides = [
 const Onboarding = () => {
   const scroll = useRef<Animated.ScrollView>(null);
 
+  const navigation = useNavigation<MainStackScreenProp>();
+
   //TODO: scrollHandler useScrollHandler?
   // const onScroll = onScrollEvent({ x });
   const { scrollHandler, x } = useScrollHandler();
@@ -128,6 +132,9 @@ const Onboarding = () => {
                       x: width * (index + 1),
                       animated: true,
                     });
+                  }
+                  if (index === slides.length - 1) {
+                    return navigation.navigate('Home');
                   }
                 }}
                 last={index === slides.length - 1}
